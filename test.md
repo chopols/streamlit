@@ -1,41 +1,3 @@
-import streamlit as st
-import pandas as pd
-from io import StringIO
-
-st.set_page_config(
-    page_icon='😊',
-    page_title='스트림릿 배포하기',
-    layout='wide',
-)
-
-st.subheader('파일 업로드')
-
-uploaded_file = st.file_uploader("Choose a file")
-if uploaded_file is not None:
-    # To read file as bytes:
-    bytes_data = uploaded_file.getvalue()
-    st.write(bytes_data)
-
-    # To convert to a string based IO:
-    stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
-    st.write(stringio)
-
-    # To read file as string:
-    string_data = stringio.read()
-    st.write(string_data)
-
-    # Can be used wherever a "file-like" object is accepted:
-    dataframe = pd.read_csv(uploaded_file)
-    st.write(dataframe)
-
-
-uploaded_files = st.file_uploader("Choose a CSV file", accept_multiple_files=True)
-for uploaded_file in uploaded_files:
-    bytes_data = uploaded_file.read()
-    st.write("filename:", uploaded_file.name)
-    st.write(bytes_data)    
-
-'''
 
 [1. Headers 헤더](#1-headers헤더)  
 [2. Horizontal Rules 수평선](#2-Horizontal-수평선)  
@@ -146,6 +108,13 @@ public class BootSpringBootApplication {
 | `absolute` | 위치 상 부모(조상)요소를 기준으로 배치 |  |
 | `fixed` | 브라우저 창을 기준으로 배치 |  |
 
+값 | 의미 | 기본값
+---|:---:|---:
+`static` | 유형(기준) 없음 / 배치 불가능 | `static`
+`relative` | 요소 **자신**을 기준으로 배치 |
+`absolute` | 위치 상 **_부모_(조상)요소**를 기준으로 배치 |
+`fixed` | **브라우저 창**을 기준으로 배치 |
+
 테이블 정렬
 
 헤더1|헤더2|헤더3
@@ -160,7 +129,7 @@ Left|Center|Right
 ![Baby](http://nas.ibzsoft.com/baby.png "인아 파이팅")  
 [![Baby](http://nas.ibzsoft.com/baby.png "인아 파이팅")](http://nas.ibzsoft.com/baby.png)
 
-<img src="http://nas.ibzsoft.com/baby.png" width="250px" height="100px" title="px(픽셀) 크기 설정" alt="Baby"></img><br/>
+<img src="http://nas.ibzsoft.com/baby.png" width="450px" height="300px" title="px(픽셀) 크기 설정" alt="Baby"></img><br/>
 
 # 10. Links (Anchor) 링크 
 [Google](https://developers.google.com/)
@@ -174,4 +143,3 @@ Left|Center|Right
 - [ ] this is an incomplete item
 - [x] @mentions, #refs, [links](), **formatting**, and ~~tags~~ supported
 
-'''
