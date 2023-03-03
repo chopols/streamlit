@@ -155,13 +155,6 @@ Left|Center|Right
 4|5|6
 7|8|9
 
-
-# 9. 이미지 
-![Baby](http://nas.ibzsoft.com/baby.png "인아 파이팅")  
-[![Baby](http://nas.ibzsoft.com/baby.png "인아 파이팅")](http://nas.ibzsoft.com/baby.png)
-
-<img src="http://nas.ibzsoft.com/baby.png" width="250px" height="100px" title="px(픽셀) 크기 설정" alt="Baby"></img><br/>
-
 # 10. Links (Anchor) 링크 
 [Google](https://developers.google.com/)
 
@@ -174,4 +167,14 @@ Left|Center|Right
 - [ ] this is an incomplete item
 - [x] @mentions, #refs, [links](), **formatting**, and ~~tags~~ supported
 
+# 9. 이미지 
+![Baby](http://nas.ibzsoft.com/baby.png "인아 파이팅")  
 '''
+
+# [![Baby](http://nas.ibzsoft.com/baby.png "인아 파이팅")](http://nas.ibzsoft.com/baby.png)
+# <img src="http://nas.ibzsoft.com/baby.png" width="250px" height="100px" title="px(픽셀) 크기 설정" alt="Baby"></img><br/>
+
+con5,con6,empty2 = st.columns([0.5,0.5,0.3])
+with con5:
+  video_file = open('d:/temp/ina.mp4', 'rb').read()
+  st.video(video_file)
