@@ -6,8 +6,8 @@ class dbconn:
         try:
             self.conn = db.connect(
                 server='61.252.138.43',
-                user='sa',
-                password='kit@)!)',
+                user='chopols',
+                password='2580',
                 database='wm_obs',
                 charset='utf8',
                 # charset='ISO-8859-1',

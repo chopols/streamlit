@@ -47,15 +47,15 @@ if start_button:
         df['image'] = df['image'].str.encode('ISO-8859-1').str.decode('cp949')
         df['cost1'] = df['cost'].map('{:,.0f}'.format)
         df['lastdate1'] = df['lastdate'].map('{:%Y-%m-%d}'.format) 
-        # df = df.set_index('code')
+        df = df.set_index('code')
         # df.loc[:, 'cost'] = df['cost'].map('{:,.0f}'.format)
         # df.loc[:, 'lastdate'] = df['lastdate'].map('{:%Y-%m-%d}'.format) 
         # df.loc[:, 'lastdate'] =df['lastdate'] .map('{:%Y-%m-%d %H:%M:%S}'.format) 
         # df.loc[:, 'lastdate'] =df['lastdate'].map('{: %Y}'.format)
         # st.table(df[['code','name','info','cost1','lastdate1','image']])
         # st.dataframe(df[['code','name','info','cost1','lastdate1','image']].style.highlight_max(axis=0))
-        # st.dataframe(df[['name','info','cost1','lastdate1','image']], 1200, 600)
-        AgGrid(df[['code','name','info','cost1','lastdate1','image']])
+        st.dataframe(df[['name','info','cost1','lastdate1','image']], 1200, 600)
+        # AgGrid(df[['code','name','info','cost1','lastdate1','image']])
         # js = st_javascript("""
         #     function(e) {
         #         let api = e.api;     
