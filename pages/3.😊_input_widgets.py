@@ -150,7 +150,8 @@ st.write("I'm ", age, 'years old')
 values = st.slider(
     'Select a range of values',
     0.0, 100.0, (25.0, 75.0))
-st.write('Values:', values)
+st.write('Values:', values[0])
+st.write(type(values))
 
 appointment = st.slider(
     "Schedule your appointment:",
